@@ -1,0 +1,235 @@
+Q.1 Qual é a diferença entre let, const e var?
+
+    var tem escopo de função e permite re-declaração e re-atribuição. let tem escopo de bloco e permite re-atribuição, mas não re-declaração. const também tem escopo de bloco, mas não permite nem re-declaração nem re-atribuição após a inicialização.
+
+
+Q.2 O que são closures em JavaScript?
+
+    closures são como funções que "guardam" variáveis de um escopo onde foram criadas, permitindo acesso contínuo a essas variáveis.
+    Para que servem:
+        Guardar dados: Permitem que funções internas acessem e preservem variáveis de uma função externa, mesmo após a execução desta.
+        Privacidade: Ajudam a proteger variáveis de serem acessadas ou modificadas diretamente de fora da função.
+
+    EX: 
+    function criaContador() {
+    let contador = 0;
+    return function() {
+        contador++;
+        return contador;
+    }
+    }
+
+    const meuContador = criaContador();
+    console.log(meuContador()); // 1
+    console.log(meuContador()); // 2
+
+
+Q.3 Explique o conceito de promises em JavaScript?
+
+    Promises são objetos usados para representar o eventual sucesso ou falha de uma operação assíncrona. Uma promise pode estar em um dos três estados: pendente, resolvida (cumprida) ou rejeitada. Métodos then() e catch() são usados para manipular os resultados das promises.
+
+
+Q.4 O que é a diferença entre síncrono e assíncrono em JavaScript?
+
+    Síncrono significa que o código é executado linha por linha, esperando cada operação terminar antes de iniciar a próxima. Assíncrono significa que algumas operações podem começar e depois permitir que outras operações continuem antes que a primeira tenha terminado, permitindo ao JavaScript lidar com eventos e operações de I/O de forma eficiente.
+
+
+Q.5 O que são funções de ordem superior (higher-order functions)?
+
+    Funções de ordem superior são funções que podem aceitar outras funções como argumentos ou retornar funções como resultado. Elas são usadas extensivamente em JavaScript, por exemplo, em métodos de array como map, filter e reduce.
+    EX: const highOrderFunction = (func1) => {
+        return func1()
+    }
+
+
+Q.6 Oque sao funcoes de primeira classe?
+
+    Podem ser atribuidas a variaveis, EX: const example = () => {}
+    Podem ser passadas como parametros para outras funcoes, EX: function example(func1) {}
+
+
+Q.7 Oque sao funcoes unarias?
+
+    Basicamente é uma funcao que aceita apenas um parametro.
+
+
+Q.8 Explique o conceito de "hoisting" em JavaScript.
+
+    Hoisting é como se o JavaScript pegasse todas as declarações de variáveis e funções e as "levantasse" para o topo do escopo atual (função ou script) antes de executar o código.
+
+    EX: Imagine que você tem uma festa e precisa arrumar as cadeiras antes dos convidados chegarem. Mesmo que você decida onde colocar as cadeiras ao longo da festa, é como se alguém tivesse magicamente movido todas as cadeiras para os lugares certos antes da festa começar.
+
+    console.log(minhaVar); // undefined
+    var minhaVar = 5;
+    console.log(minhaVar); // 5
+
+    execution in VARIABLES: 
+
+    var minhaVar;
+    console.log(minhaVar); // undefined
+    minhaVar = 5;
+    console.log(minhaVar); // 5
+
+    FUNCTIONS: 
+
+    minhaFuncao(); // "Olá, mundo!"
+    function minhaFuncao() {
+        console.log("Olá, mundo!");
+    }
+
+    EXECUTION: 
+
+    function minhaFuncao() {
+    console.log("Olá, mundo!");
+    }
+    minhaFuncao(); // "Olá, mundo!"
+
+    Variáveis var: A declaração é "levantada", mas a inicialização não. Então, você pode obter undefined se tentar usar a variável antes de inicializá-la.
+
+    Funções: Tanto a declaração quanto a definição são "levantadas", então você pode chamar a função antes de sua definição no código.
+
+
+Q.9 O que é this em JavaScript?
+
+     this é uma palavra especial que refere-se ao contexto onde a função está sendo executada.
+     Em resumo, this é como uma palavra mágica que aponta para o "dono" atual da função.
+     Quando você usa this dentro de um método de um objeto, ele se refere ao próprio objeto. ex:
+
+        const meuObjeto = {
+            nome: 'João',
+            dizerNome: function() {
+                console.log(this.nome); // "João"
+            }
+        };
+
+    meuObjeto.dizerNome(); // "João"
+
+    Quando você usa this em uma função fora de um objeto (no contexto global), ele se refere ao objeto global (window no navegador, global no Node.js).
+
+    function mostrarThis() {
+        console.log(this); // no navegador, vai mostrar o objeto window
+    }
+
+    mostrarThis();
+
+    Em funções arrow, this é determinado pelo contexto onde a função foi definida, não onde ela foi chamada.
+
+    const meuObjeto = {
+        nome: 'João',
+        dizerNome: () => {
+            console.log(this.nome); // undefined, pois `this` aqui se refere ao contexto global
+        }
+    };
+
+    meuObjeto.dizerNome();
+
+    RESUMO: 
+
+    Dentro de um método: this é o objeto dono do método.
+    Função global: this é o objeto global.
+    Função arrow: this é o contexto onde a função foi definida.
+
+
+Q.10 Qual é a diferença entre == e === (Equality Operator vs Strict Equality Operator) ?
+
+    == compara valores após fazer a coerção de tipos (conversão de tipos), enquanto === compara valores e tipos diretamente, sem fazer coerção. Portanto, === é mais rigoroso e recomendado para evitar comparações inesperadas.
+
+
+Q.11 O que é o Event Loop em JavaScript?
+
+    O Event Loop é um mecanismo que permite ao JavaScript realizar várias coisas ao mesmo tempo (assíncronas) sem precisar esperar que cada coisa termine antes de começar a próxima. Ele ajuda o JavaScript a ser eficiente e rápido, mesmo com tarefas demoradas.
+
+    Imagine uma fila de tarefas e uma pessoa (o Event Loop) que verifica constantemente se há algo para fazer.
+
+    1.Call Stack (Pilha de Execução): Onde o JavaScript coloca as funções que estão sendo executadas no momento.
+    2.Task Queue (Fila de Tarefas): Onde o JavaScript coloca as funções que devem ser executadas depois que as funções atuais terminarem.
+
+    PASSO A PASSO
+
+    Executar Função: Quando você chama uma função, ela vai para a Call Stack.
+    Adicionar Tarefa: Se a função tiver uma tarefa assíncrona (como setTimeout), essa tarefa vai para a Task Queue.
+    Verificar Fila: O Event Loop verifica se a Call Stack está vazia.
+    Executar Tarefa: Se a Call Stack estiver vazia, o Event Loop pega a próxima tarefa da Task Queue e a coloca na Call Stack para ser executada.
+
+    console.log('Primeiro'); // 1
+
+    setTimeout(() => {
+        console.log('Segundo'); // 3
+    }, 1000);
+
+    console.log('Terceiro'); // 2
+
+    Resumo Super Fácil
+
+    Event Loop: Um ajudante que garante que as tarefas assíncronas (como setTimeout, Promises) sejam executadas na ordem certa.
+    Call Stack: Onde as funções são executadas.
+    Task Queue: Onde as tarefas esperam para serem executadas quando a Call Stack estiver vazia.
+
+    Exemplo Visual
+
+    Pense no Event Loop como um chef em uma cozinha:
+
+    O Call Stack é o fogão, onde os pratos (funções) estão sendo cozinhados.
+    A Task Queue é uma fila de pedidos (tarefas) esperando para serem cozinhados.
+    O Event Loop é o chef que verifica se há espaço no fogão (Call Stack) para começar a cozinhar o próximo pedido da fila (Task Queue).
+
+
+Q.12 Explique o conceito de async e await em JavaScript.
+
+    async é uma palavra-chave que marca uma função como assíncrona, permitindo o uso de await dentro dela. await pausa a execução da função assíncrona até que a promise seja resolvida ou rejeitada, tornando o código assíncrono mais fácil de ler e escrever.
+
+
+Q.13 Oque é IIFE?
+
+    Immediatly invoked function expression
+    Assim que criada essa funçao, ela sera imeditamente invocada, nao precisa chamar ela depois.
+
+    (function example(){
+        console.log("HI")
+    }) ()
+
+
+Q.14 Diferença entre NULL e UNDEFINED?
+
+    Undefined: Valor atribuido a uma variavel que foi declarada mas nao inicializada
+    Ex:
+        let a;
+        console.log(a) //OUTPUT: Undefined
+
+    Null: Ele é declarado e inicializado com o valor null, é um dado do tipo objeto
+
+
+Q.15 Oque é uma callBack function?
+
+    Um callback é uma função que você passa para outra função como argumento, para que ela seja chamada (executada) depois que a primeira função termina seu trabalho.
+
+    Como Funciona?
+        Passar a Função: Você cria uma função e a passa como argumento para outra função.
+        Chamar a Função: A função recebida como argumento (callback) é chamada em algum momento dentro da função que a recebeu.
+
+    Exemplo Simples
+
+    Pense em um pedido de pizza:
+
+        1. Você pede a pizza (chama a função).
+        2. Diz ao pizzaiolo para te ligar quando a pizza estiver pronta (passa a função de callback).
+        3. O pizzaiolo te liga quando a pizza está pronta (chama a função de callback).
+
+        function pedirPizza(callback) {
+            console.log('Pizza sendo preparada...');
+            setTimeout(() => {
+                console.log('Pizza pronta!');
+                callback();
+            }, 2000); // Simula o tempo de preparo da pizza
+        }
+
+        function minhaPizzaEstaPronta() {
+            console.log('Obrigado por me avisar! Vou buscar minha pizza.');
+        }
+
+        pedirPizza(minhaPizzaEstaPronta);
+
+    RESUMO: 
+
+    Callback: Uma função que é passada para outra função para ser chamada depois que essa função termina.
+    Como Usar: Passa a função como argumento e ela será chamada quando o trabalho dentro da outra função terminar.

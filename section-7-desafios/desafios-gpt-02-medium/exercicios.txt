@@ -1,0 +1,33 @@
+Claro! Aqui estão mais 10 exercícios de JavaScript com temas voltados para aplicações do mundo real, focando mais no uso de laços de repetição e métodos de array:
+
+Exercícios para Praticar Lógica de Programação e Métodos de Array
+
+1- Contar pedidos de cada cliente
+Crie uma função que, dado um array de pedidos, conte quantos pedidos cada cliente fez. Cada pedido tem as propriedades cliente e valor.
+
+2- Calcular a média de avaliações
+Crie uma função que, dado um array de avaliações de produtos, calcule a média das avaliações. Cada avaliação tem as propriedades produto e nota.
+
+3- Listar produtos esgotados
+Crie uma função que, dado um array de produtos, retorne um novo array contendo apenas os produtos que estão esgotados (quantidade igual a 0).
+
+4- Aplicar cupom de desconto
+Crie uma função que, dado um array de itens de um carrinho de compras e um cupom de desconto (em porcentagem), aplique o desconto a cada item do carrinho. Cada item tem as propriedades nome, preço e quantidade.
+
+5- Atualizar status de pedidos
+Crie uma função que, dado um array de pedidos e um status de entrega, atualize o status de todos os pedidos para o novo status. Cada pedido tem as propriedades id, cliente e status.
+
+6- Calcular a soma de valores positivos
+Crie uma função que, dado um array de números, calcule a soma de todos os valores positivos do array.
+
+7- Filtrar usuários por cidade
+Crie uma função que, dado um array de usuários e uma cidade, retorne um novo array contendo apenas os usuários que moram na cidade especificada. Cada usuário tem as propriedades nome e cidade.
+
+8- Agrupar produtos por categoria
+Crie uma função que, dado um array de produtos, agrupe os produtos por categoria. A função deve retornar um objeto onde as chaves são as categorias e os valores são arrays de produtos. Cada produto tem as propriedades nome e categoria.
+
+9- Contar palavras em uma frase
+Crie uma função que, dado um string de frase, conte a frequência de cada palavra na frase. A função deve retornar um objeto onde as chaves são as palavras e os valores são as contagens.
+
+10- Atualizar inventário com compras
+Crie uma função que, dado um array de produtos em estoque e um array de compras realizadas, atualize o estoque dos produtos. Cada compra tem as propriedades nome e quantidade e cada produto em estoque tem as propriedades nome e quantidade.

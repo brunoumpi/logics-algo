@@ -1,0 +1,32 @@
+
+10 exercícios de JavaScript nível fácil, com temas voltados para aplicações do mundo real:
+
+1. **Verificar a elegibilidade para um desconto**
+   Crie uma função que verifique se um cliente é elegível para um desconto. Um cliente é elegível se tiver feito mais de 5 compras no último mês ou se for um cliente VIP.
+
+2. **Calcular a comissão de um vendedor**
+   Crie uma função que calcule a comissão de um vendedor com base no valor total das vendas realizadas. A comissão é de 5% para vendas até $1000, 7% para vendas entre $1001 e $5000, e 10% para vendas acima de $5000.
+
+3. **Classificar uma propriedade por faixa de preço**
+   Crie uma função que classifique uma propriedade imobiliária em 'Barata', 'Moderada' ou 'Cara'. Uma propriedade é considerada 'Barata' se o preço for menor que $100,000, 'Moderada' entre $100,000 e $500,000, e 'Cara' se for maior que $500,000.
+
+4. **Verificar a disponibilidade de entrega**
+   Crie uma função que verifique se um endereço está dentro da área de entrega de um aplicativo de delivery. A área de entrega é definida por um raio de 10km a partir do centro da cidade.
+
+5. **Filtrar clientes por idade**
+   Dado um array de objetos onde cada objeto tem as propriedades nome e idade, escreva uma função que retorne um novo array contendo apenas os clientes com 18 anos ou mais.
+
+6. **Calcular o valor total de um carrinho de compras**
+   Crie uma função que calcule o valor total de um carrinho de compras, dado um array de itens onde cada item tem o preço e a quantidade.
+
+7. **Imprimir na tela todos os produtos em estoque**
+   Crie uma função que imprima na tela todos os produtos que estão em estoque em um e-commerce, dado um array de produtos onde cada produto tem um nome e uma quantidade em estoque.
+
+8. **Converter moeda**
+   Crie uma função que converta um valor em dólares para reais, utilizando uma taxa de câmbio fornecida como parâmetro.
+
+9. **Adicionar um produto ao inventário**
+   Crie uma função que aceite dois parâmetros: um array de produtos e um novo produto. A função deve adicionar o novo produto ao array se ele ainda não existir, e atualizar a quantidade se ele já existir.
+
+10. **Listar imóveis por bairro**
+    Crie uma função que liste todos os imóveis de um determinado bairro, dado um array de imóveis onde cada imóvel tem um endereço e um bairro.

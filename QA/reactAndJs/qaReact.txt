@@ -1,0 +1,99 @@
+                                ********* REACT *********
+
+Q.1 Qual a diferença entre virtualDOM e DOM?
+
+    Na eficiencia e desempenho. 
+
+    O DOM é uma representação hierárquica e estruturada de um documento HTML ou XML. Ele permite que scripts, como JavaScript, interajam com a estrutura e o conteúdo dos documentos de forma programática.
+
+    Quando uma página web é carregada, o navegador cria o DOM a partir do HTML.
+
+    Modificações no DOM real (nativo) são diretamente refletidas na interface do usuário. Essas mudanças podem ser custosas em termos de performance, especialmente em documentos grandes ou complexos, porque cada modificação pode desencadear operações de re-renderização, recalculo de estilos e re-layout.
+
+    O Virtual DOM é uma representação em memória do DOM real. É uma abstração leve que frameworks como React utilizam para melhorar a eficiência e a performance de atualizações na interface do usuário. Quando o estado da aplicação muda, o Virtual DOM é atualizado primeiro.
+    Apenas as partes do DOM real que mudaram são atualizadas, minimizando a quantidade de operações no DOM real e, portanto, melhorando a performance.
+
+    DIFERENCAS:
+
+    O DOM é criado e mantido pelo navegador, enquanto o Virtual DOM é gerenciado pelo framework da aplicação (como React). O DOM real pode ser lento para atualizar diretamente, especialmente com muitas mudanças frequentes. O Virtual DOM permite que as atualizações sejam feitas de forma eficiente e só aplica as mudanças necessárias ao DOM real.
+
+
+Q.2 O que é React e por que é usado?
+
+    React é uma biblioteca ou LIB JavaScript de código aberto desenvolvida pelo Facebook para criar interfaces de usuário, especialmente para aplicações de página única (SPAs). É usado devido à sua eficiência na renderização de componentes através do Virtual DOM, sua modularidade, e a facilidade de gerenciamento de estados e props.
+    Com o React iremos lidar com o viewLayer da nossa aplicaçao.
+
+
+Q.3 O que são componentes em React?
+
+    Componentes são os blocos de construção da interface em React. Eles podem ser funcionais ou baseados em classes e são responsáveis por renderizar partes da UI. Componentes podem receber dados via props e gerenciar seu próprio estado interno.
+
+
+Q.4 Explique o conceito de estado (state) em React.
+
+    O estado é um objeto que representa partes da interface que podem mudar. Cada componente pode ter seu próprio estado, que pode ser modificado usando o método setState em componentes de classe ou o hook useState em componentes funcionais.
+
+
+Q.5 O que são props em React?
+
+    Props, abreviação de "properties", são parâmetros que são passados para componentes para configurar ou personalizar sua aparência ou comportamento. Props são imutáveis, o que significa que um componente não pode alterar seus próprios props.
+
+
+Q.6 Diferença entre state e Props?
+
+    O estado é uma forma de guardar informaçao dentro do componente ele é MUTAVEL, ja as PROPS sao uma forma de fazermos a comunicaçao de componente PAI para componente FILHO e sao IMUTAVEIS o componente nao consegue mudar a prop
+
+
+Q.7 Qual é a diferença entre componentes de classe e componentes funcionais?
+
+    Componentes de classe são definidos usando classes ES6 e podem manter estado interno e utilizar métodos do ciclo de vida. Componentes funcionais são definidos como funções e, inicialmente, eram sem estado, mas agora podem usar hooks como useState e useEffect para gerenciar estado e efeitos colaterais.
+
+
+Q.8 O que é o Virtual DOM e como ele funciona?
+
+    O Virtual DOM é uma representação leve do DOM real. Quando o estado de um componente muda, um novo Virtual DOM é criado e comparado com o anterior usando um algoritmo de diffs. As mudanças necessárias são então aplicadas ao DOM real, minimizando operações de manipulação de DOM e melhorando o desempenho.
+
+
+Q.9 Explique o hook useState em React.
+
+     useState é um hook que permite adicionar estado a componentes funcionais. Ele retorna um par: o valor do estado atual e uma função que permite atualizá-lo. Exemplo: const [count, setCount] = useState(0);.
+
+
+Q.10 Explique o hook useState em React.
+
+    useEffect é um hook que permite executar efeitos colaterais em componentes funcionais. É usado para tarefas como buscar dados, configurar subscrições, e manipular o DOM. Pode ser configurado para rodar após cada renderização, apenas na montagem inicial, ou quando certas dependências mudam.
+
+
+Q.11 O que é JSX e por que é usado em React?
+
+    JSX é uma extensão de sintaxe para JavaScript que se parece com HTML. É usado em React para descrever a UI. JSX facilita a criação de elementos React de forma mais intuitiva e legível, e é transpilado para chamadas React.createElement() pelo Babel.
+
+
+Q.12 O que é o Context API e como ele é usado?
+
+    O Context API é uma ferramenta para gerenciar e compartilhar estado globalmente entre componentes sem a necessidade de passar props manualmente por várias camadas. É útil para temas, idiomas, ou qualquer dado que precise ser acessível em várias partes da aplicação.
+
+
+Q.13 Quais principais features de usar React?
+
+    Usar o DOM Virtual
+    Usar o JSX
+    Components
+
+
+Q.14 Diferença entre ELEMENT e COMPONENT?
+
+    Um componente React retorna obrigatoriamente um elemento!
+    Um elemento é a menor unidade dentro de um APP REACT
+
+    EX: 
+
+    Componente Welcome e dentro do componente Welcome temos o Elemento <h2>HELLO</h2> 
+
+
+Q.15 Quando usar class component ao inves de function component?
+    Hoje como os functional components nao sao mais stateless podemos usar-los ao inves dos class components, pois antes os funcional components nao tinham estado
+
+    Em 2 ocasioes:
+        -Caso esteja usando uma versao antiga do REACT
+        -Ou caso voce deva criar um componente bem especifico que nao tenha no functional components como o error boundary
