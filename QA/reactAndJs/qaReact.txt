@@ -59,9 +59,38 @@ Q.9 Explique o hook useState em React.
      useState é um hook que permite adicionar estado a componentes funcionais. Ele retorna um par: o valor do estado atual e uma função que permite atualizá-lo. Exemplo: const [count, setCount] = useState(0);.
 
 
-Q.10 Explique o hook useState em React.
+Q.10 Explique o hook useEffect em React.
 
     useEffect é um hook que permite executar efeitos colaterais em componentes funcionais. É usado para tarefas como buscar dados, configurar subscrições, e manipular o DOM. Pode ser configurado para rodar após cada renderização, apenas na montagem inicial, ou quando certas dependências mudam.
+
+    EXEMPLOS: 
+
+    1. Executa o efeito apenas uma vez após a montagem do componente.
+
+    useEffect(() => {
+    console.log('Componente montado');
+    }, []);
+
+    2. Efeitos com Dependências
+
+    useEffect(() => {
+        console.log('Prop mudou:', prop);
+
+        return () => {
+            console.log('Cleanup anterior, antes do próximo efeito ou desmontagem');
+        };
+    }, [prop]);
+
+    3. Buscar dados de uma API quando o componente monta
+
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch('https://api.example.com/data');
+            const data = await response.json();
+            console.log(data);
+        }
+        fetchData();
+    }, []);
 
 
 Q.11 O que é JSX e por que é usado em React?
@@ -97,3 +126,45 @@ Q.15 Quando usar class component ao inves de function component?
     Em 2 ocasioes:
         -Caso esteja usando uma versao antiga do REACT
         -Ou caso voce deva criar um componente bem especifico que nao tenha no functional components como o error boundary
+
+
+Q.16 O que é hook?
+
+    Um "hook" é uma função especial no React que permite usar funcionalidades do React, como estado e ciclo de vida, em componentes funcionais (ou seja, componentes que são funções em vez de classes). Antes dos hooks, esses recursos estavam disponíveis apenas em componentes de classe.
+
+
+Q.17 O que é useRef?
+
+    O useRef é um hook que permite criar uma referência mutável (você pode alterar o valor ao qual a referência aponta sem causar uma re-renderização do componente.) que pode ser anexada a um elemento DOM ou armazenar qualquer valor que você queira manter entre renderizações sem causar uma re-renderização. 
+    
+    No contexto do React, isso é especialmente útil quando você precisa manter uma referência a um valor que persiste entre renderizações, mas que não deve desencadear uma nova renderização do componente quando esse valor é atualizado.
+
+
+Q.18 Quando devemos usar o useCallback?
+
+    Exatamente, useCallback é muito útil quando você precisa passar uma função para um componente filho e deseja evitar que o componente filho seja re-renderizado desnecessariamente. Isso é especialmente importante em casos onde o componente filho faz uso de otimizações de renderização, como React.memo, que evita re-renderizações se as props não mudarem.
+
+    import React, { useState, useCallback } from 'react';
+    import Filho from './Filho';
+
+    function Pai() {
+        const [contagem, setContagem] = useState(0);
+
+        const incrementar = useCallback(() => {
+            setContagem(c => c + 1);
+        }, []);
+
+        return (
+            <div>
+            <Filho onIncrementar={incrementar} />
+            <p>Contagem: {contagem}</p>
+            </div>
+        );
+    }
+
+    function Filho({ onIncrementar }) {
+        console.log('Filho renderizado');
+        return <button onClick={onIncrementar}>Incrementar</button>;
+    }
+
+    export default Pai;

@@ -233,3 +233,70 @@ Q.15 Oque é uma callBack function?
 
     Callback: Uma função que é passada para outra função para ser chamada depois que essa função termina.
     Como Usar: Passa a função como argumento e ela será chamada quando o trabalho dentro da outra função terminar.
+
+
+Q.16 Qual a diferença entre promise pra async await?
+
+    Promise: É uma forma de lidar com operações assíncronas em JavaScript. Você cria uma promessa e usa .then() e .catch() para trabalhar com o resultado ou erro.
+
+    Async/Await: É uma sintaxe mais simples e legível para trabalhar com promises. Você escreve código assíncrono como se fosse síncrono, usando async para declarar uma função assíncrona e await para esperar por uma promessa.
+
+    Exemplo:
+
+    function buscarDados() {
+        return fetch('https://api.example.com/dados')
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+    }
+
+    buscarDados();
+
+    async function buscarDados() {
+        try {
+            const response = await fetch('https://api.example.com/dados');
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    buscarDados();
+
+
+Q.17 Oque sao laços de repetiçao e para oque sao usados?
+
+    Laços de repetição (ou loops) são usados para executar repetidamente um bloco de código enquanto uma condição for verdadeira. Eles são úteis para automatizar tarefas repetitivas. Eles são úteis para automatizar tarefas repetitivas.
+
+
+Q.18 Como o metodo reduce funciona?
+
+    O reduce é um método de array em JavaScript que reduz o array a um único valor, aplicando uma função acumuladora a cada item do array, de esquerda para direita.
+
+
+Q.19 Como o webpack funciona?
+
+    O webpack é um empacotador de módulos JavaScript. Ele pega o código e suas dependências, e os empacota em um ou mais arquivos otimizados para o navegador.
+
+
+Q.20 O que é uma função pura?
+
+    Uma função pura é uma função que, para os mesmos argumentos, sempre retorna o mesmo resultado e não causa efeitos colaterais (ou seja, não altera nada fora da função)
+
+    // Função pura
+    function soma(a, b) {
+        return a + b;
+    }
+
+    // Função impura (causa efeito colateral)
+    let contador = 0;
+    function incrementar() {
+        contador++;
+    }
+
+
+Q.21 O que é Babel?
+
+    Babel é um transpilador de JavaScript que converte código moderno (ES6 e além) em uma versão compatível com navegadores mais antigos.
+

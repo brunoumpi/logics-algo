@@ -1,0 +1,39 @@
+
+Q.1 O que é DOM?
+
+
+Q.2 Quantas tags de h1 existem?
+
+
+Q.3 Qual a diferença de div para um spam?
+
+
+Q.4 Cite algumas técnicas de SEO
+
+
+Q.5 Cite técnicas pra deixar um site mais performático.
+
+
+Q.6 Cite algumas técnicas de acessibilidade.
+
+
+Q.7 Como você estrutura sua aplicação?
+
+
+Q.8 O que é SASS?
+
+
+Q.9 Qual a diferença de position: relative e absolute? 
+
+
+Q.10 Qual a diferença entre classe e id?
+
+
+Q.11 Pq o CSS Modules é tão vantajoso?
+
+
+Q.12 Quais as boas práticas que você utiliza na hora de escrever CSS?
+
+
+Q.13 Quando podemos usar o before ou after? 
+
