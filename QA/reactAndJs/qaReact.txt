@@ -16,52 +16,72 @@ Q.1 Qual a diferença entre virtualDOM e DOM?
     DIFERENCAS:
 
     O DOM é criado e mantido pelo navegador, enquanto o Virtual DOM é gerenciado pelo framework da aplicação (como React). O DOM real pode ser lento para atualizar diretamente, especialmente com muitas mudanças frequentes. O Virtual DOM permite que as atualizações sejam feitas de forma eficiente e só aplica as mudanças necessárias ao DOM real.
+    -------
 
 
 Q.2 O que é React e por que é usado?
 
     React é uma biblioteca ou LIB JavaScript de código aberto desenvolvida pelo Facebook para criar interfaces de usuário, especialmente para aplicações de página única (SPAs). É usado devido à sua eficiência na renderização de componentes através do Virtual DOM, sua modularidade, e a facilidade de gerenciamento de estados e props.
     Com o React iremos lidar com o viewLayer da nossa aplicaçao.
+    -------
+    React is an open source JavaScript library or LIB developed by Facebook to create user interfaces, especially for single page applications (SPAs). It is used due to its efficiency in rendering components through the Virtual DOM, its modularity, and the ease of managing states and props.
+    With React we will deal with the viewLayer of our application.
 
 
 Q.3 O que são componentes em React?
 
     Componentes são os blocos de construção da interface em React. Eles podem ser funcionais ou baseados em classes e são responsáveis por renderizar partes da UI. Componentes podem receber dados via props e gerenciar seu próprio estado interno.
+    ----------
+    Components are the building blocks of the interface in React. They can be functional or class-based and are responsible for rendering parts of the UI. Components can receive data via props and manage their own internal state.
 
 
 Q.4 Explique o conceito de estado (state) em React.
 
     O estado é um objeto que representa partes da interface que podem mudar. Cada componente pode ter seu próprio estado, que pode ser modificado usando o método setState em componentes de classe ou o hook useState em componentes funcionais.
+    ---------
+    State is an object that represents parts of the interface that can change. Each component can have its own state, which can be modified using the setState method on class components or the useState hook on functional components.
 
 
 Q.5 O que são props em React?
 
     Props, abreviação de "properties", são parâmetros que são passados para componentes para configurar ou personalizar sua aparência ou comportamento. Props são imutáveis, o que significa que um componente não pode alterar seus próprios props.
+    ---------
+    Props, short for "properties", are parameters that are passed to components to configure or customize their appearance or behavior. Props are immutable, meaning a component cannot change its own props.
 
 
 Q.6 Diferença entre state e Props?
 
-    O estado é uma forma de guardar informaçao dentro do componente ele é MUTAVEL, ja as PROPS sao uma forma de fazermos a comunicaçao de componente PAI para componente FILHO e sao IMUTAVEIS o componente nao consegue mudar a prop
+    O estado é uma forma de guardar informaçao dentro do componente ele é MUTAVEL, ja as PROPS sao uma forma de fazermos a comunicaçao de componente PAI para componente FILHO e sao IMUTAVEIS o componente nao consegue mudar a prop.
+    ---------
+    The state is a way of storing information within the component, it is MUTABLE, whereas PROPS are a way of communicating from the PARENT component to the CHILD component and are IMMUTABLE, the component cannot change the prop.
 
 
 Q.7 Qual é a diferença entre componentes de classe e componentes funcionais?
 
     Componentes de classe são definidos usando classes ES6 e podem manter estado interno e utilizar métodos do ciclo de vida. Componentes funcionais são definidos como funções e, inicialmente, eram sem estado, mas agora podem usar hooks como useState e useEffect para gerenciar estado e efeitos colaterais.
+    ---------
+    Class components are defined using ES6 classes and can maintain internal state and use lifecycle methods. Functional components are defined as functions and were initially stateless, but can now use hooks like useState and useEffect to manage state and side effects.
 
 
 Q.8 O que é o Virtual DOM e como ele funciona?
 
     O Virtual DOM é uma representação leve do DOM real. Quando o estado de um componente muda, um novo Virtual DOM é criado e comparado com o anterior usando um algoritmo de diffs. As mudanças necessárias são então aplicadas ao DOM real, minimizando operações de manipulação de DOM e melhorando o desempenho.
+    ---------
+    Virtual DOM is a lightweight representation of the real DOM. When the state of a component changes, a new Virtual DOM is created and compared with the previous one using a diffs algorithm. The necessary changes are then applied to the actual DOM, minimizing DOM manipulation operations and improving performance.
 
 
 Q.9 Explique o hook useState em React.
 
-     useState é um hook que permite adicionar estado a componentes funcionais. Ele retorna um par: o valor do estado atual e uma função que permite atualizá-lo. Exemplo: const [count, setCount] = useState(0);.
+    useState é um hook que permite adicionar estado a componentes funcionais. Ele retorna um par: o valor do estado atual e uma função que permite atualizá-lo. Exemplo: const [count, setCount] = useState(0);.
+    ---------
+    useState is a hook that allows you to add state to functional components. It returns a pair: the current state value and a function that allows you to update it. Example: const [count, setCount] = useState(0);.
 
 
 Q.10 Explique o hook useEffect em React.
 
     useEffect é um hook que permite executar efeitos colaterais em componentes funcionais. É usado para tarefas como buscar dados, configurar subscrições, e manipular o DOM. Pode ser configurado para rodar após cada renderização, apenas na montagem inicial, ou quando certas dependências mudam.
+    ---------
+    useEffect is a hook that allows you to execute side effects on functional components. It is used for tasks such as fetching data, configuring subscriptions, and manipulating the DOM. It can be configured to run after each render, only on initial assembly, or when certain dependencies change.
 
     EXEMPLOS: 
 
@@ -96,11 +116,15 @@ Q.10 Explique o hook useEffect em React.
 Q.11 O que é JSX e por que é usado em React?
 
     JSX é uma extensão de sintaxe para JavaScript que se parece com HTML. É usado em React para descrever a UI. JSX facilita a criação de elementos React de forma mais intuitiva e legível, e é transpilado para chamadas React.createElement() pelo Babel.
+    ---------
+    JSX is a syntax extension for JavaScript that looks like HTML. It is used in React to describe the UI. JSX makes creating React elements more intuitive and readable, and is transpiled to React.createElement() calls by Babel.
 
 
 Q.12 O que é o Context API e como ele é usado?
 
     O Context API é uma ferramenta para gerenciar e compartilhar estado globalmente entre componentes sem a necessidade de passar props manualmente por várias camadas. É útil para temas, idiomas, ou qualquer dado que precise ser acessível em várias partes da aplicação.
+    ---------
+    The Context API is a tool for managing and sharing state globally between components without the need to manually pass props through multiple layers. It's useful for themes, languages, or any data that needs to be accessible in multiple parts of the application.
 
 
 Q.13 Quais principais features de usar React?
@@ -108,6 +132,11 @@ Q.13 Quais principais features de usar React?
     Usar o DOM Virtual
     Usar o JSX
     Components
+    ---------
+    Use the Virtual DOM
+    Use JSX
+    Components
+    Hooks
 
 
 Q.14 Diferença entre ELEMENT e COMPONENT?
@@ -119,9 +148,15 @@ Q.14 Diferença entre ELEMENT e COMPONENT?
 
     Componente Welcome e dentro do componente Welcome temos o Elemento <h2>HELLO</h2> 
 
+    ---------
+    A React component must return an element!
+    An element is the smallest unit within a REACT APP
+
 
 Q.15 Quando usar class component ao inves de function component?
     Hoje como os functional components nao sao mais stateless podemos usar-los ao inves dos class components, pois antes os funcional components nao tinham estado
+    ---------
+    Today, as functional components are no longer stateless, we can use them instead of class components, as before functional components had not been stateless.
 
     Em 2 ocasioes:
         -Caso esteja usando uma versao antiga do REACT
@@ -132,6 +167,10 @@ Q.16 O que é hook?
 
     Um "hook" é uma função especial no React que permite usar funcionalidades do React, como estado e ciclo de vida, em componentes funcionais (ou seja, componentes que são funções em vez de classes). Antes dos hooks, esses recursos estavam disponíveis apenas em componentes de classe.
 
+    ---------
+
+    A "hook" is a special function in React that allows you to use React functionality, such as state and lifecycle, in functional components (that is, components that are functions rather than classes). Before hooks, these features were only available in class components.
+
 
 Q.17 O que é useRef?
 
@@ -139,10 +178,20 @@ Q.17 O que é useRef?
     
     No contexto do React, isso é especialmente útil quando você precisa manter uma referência a um valor que persiste entre renderizações, mas que não deve desencadear uma nova renderização do componente quando esse valor é atualizado.
 
+    ----------
+
+    useRef is a hook that allows you to create a mutable reference (you can change the value the reference points to without causing the component to re-render.) that can be attached to a DOM element or store any value you want to keep between renders without causing a re-render. 
+    
+    In the context of React, this is especially useful when you need to maintain a reference to a value that persists between renders, but which should not trigger a re-render of the component when that value is updated.
+
 
 Q.18 Quando devemos usar o useCallback?
 
     Exatamente, useCallback é muito útil quando você precisa passar uma função para um componente filho e deseja evitar que o componente filho seja re-renderizado desnecessariamente. Isso é especialmente importante em casos onde o componente filho faz uso de otimizações de renderização, como React.memo, que evita re-renderizações se as props não mudarem.
+
+    --------------
+
+    Exactly, useCallback is very useful when you need to pass a function to a child component and want to prevent the child component from being re-rendered unnecessarily. This is especially important in cases where the child component makes use of rendering optimizations, like React.memo, which prevents re-renders if the props don't change.
 
     import React, { useState, useCallback } from 'react';
     import Filho from './Filho';

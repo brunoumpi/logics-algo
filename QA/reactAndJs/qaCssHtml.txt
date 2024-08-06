@@ -37,3 +37,22 @@ Q.12 Quais as boas práticas que você utiliza na hora de escrever CSS?
 
 Q.13 Quando podemos usar o before ou after? 
 
+
+Q.14 Oque é o position absolute e relative e quando usar? 
+
+    Resumindo quando usamos o POSITION ABSOLUTE em uma caixa, mas se o conteiner PAI desta CAIXA nao tiver: Position Relative. A caixa filha ira ter o BODY como PAI.
+    https://www.youtube.com/watch?v=lRNiaInU-U4 
+    - Position: Relative
+
+        Definição: Um elemento com position: relative é posicionado em relação à sua posição original no fluxo do documento. Quando você usa top, right, bottom ou left, o elemento se desloca a partir da sua posição original.
+
+        Uso Comum:
+
+        Quando você precisa ajustar ligeiramente a posição de um elemento em relação ao seu posicionamento padrão.
+        Para criar um contexto de referência para um elemento position: absolute filho.
+
+    - Position: Absolute
+        Definição: Um elemento com position: absolute é posicionado em relação ao seu ancestral mais próximo que tenha uma posição diferente de static. Se não houver tal ancestral, ele será posicionado em relação ao elemento <html> (a viewport).
+
+        Uso Comum:
+        Quando você precisa de um controle preciso sobre a posição de um elemento.

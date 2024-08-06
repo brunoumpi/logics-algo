@@ -1,42 +1,63 @@
 Q.1 Qual é a diferença entre let, const e var?
 
     var tem escopo de função e permite re-declaração e re-atribuição. let tem escopo de bloco e permite re-atribuição, mas não re-declaração. const também tem escopo de bloco, mas não permite nem re-declaração nem re-atribuição após a inicialização.
+    ----------
+    var has function scope and allows re-declaration and re-assignment. let is block scoped and allows re-assignment but not re-declaration. const is also block scoped, but allows neither re-declaration nor re-assignment after initialization.
 
 
 Q.2 O que são closures em JavaScript?
 
     closures são como funções que "guardam" variáveis de um escopo onde foram criadas, permitindo acesso contínuo a essas variáveis.
+    As closures sao como filhotes de canguru que ficam no bolso do PAI e o filho tem acesso ao contexto do pai.
+
     Para que servem:
         Guardar dados: Permitem que funções internas acessem e preservem variáveis de uma função externa, mesmo após a execução desta.
         Privacidade: Ajudam a proteger variáveis de serem acessadas ou modificadas diretamente de fora da função.
+    ----------
+    closures are like functions that "store" variables in a scope where they were created, allowing continuous access to these variables.
+    Closures are like baby kangaroos that stay in the FATHER's pocket and the child has access to the parent's context.
+    
+    What are worth for:
+        Save data: Allow internal functions to access and preserve variables from an external function, even after the latter has been executed.
+        Privacy: Help protect variables from being accessed or modified directly from outside the function.
 
     EX: 
-    function criaContador() {
-    let contador = 0;
-    return function() {
-        contador++;
-        return contador;
-    }
+
+    const nomeCompleto = () => {
+        const nome = "Bruno Vittoria"
+        
+        const formataNome = () => {                     // FUNCAO CLOSURE
+            const nomes = nome.split(" ")               //PEGA VALOR DA FUNCAO PAI
+            return nomes[0] + " " + nomes[nomes.length - 1]
+        }
+
+        return formataNome
     }
 
-    const meuContador = criaContador();
-    console.log(meuContador()); // 1
-    console.log(meuContador()); // 2
+    const minhaClosure = nomeCompleto()
+
+    console.log(minhaClosure())
 
 
 Q.3 Explique o conceito de promises em JavaScript?
 
     Promises são objetos usados para representar o eventual sucesso ou falha de uma operação assíncrona. Uma promise pode estar em um dos três estados: pendente, resolvida (cumprida) ou rejeitada. Métodos then() e catch() são usados para manipular os resultados das promises.
+    ----------
+    Promises are objects used to represent the eventual success or failure of an asynchronous operation. A promise can be in one of three states: pending, resolved (fulfilled) or rejected. then() and catch() methods are used to manipulate the results of promises.
 
 
 Q.4 O que é a diferença entre síncrono e assíncrono em JavaScript?
 
     Síncrono significa que o código é executado linha por linha, esperando cada operação terminar antes de iniciar a próxima. Assíncrono significa que algumas operações podem começar e depois permitir que outras operações continuem antes que a primeira tenha terminado, permitindo ao JavaScript lidar com eventos e operações de I/O de forma eficiente.
+    ----------
+    Synchronous means that the code is executed line by line, waiting for each operation to finish before starting the next. Asynchronous means that some operations can begin and then allow other operations to continue before the first has finished, allowing JavaScript to handle events and I/O operations efficiently.
 
 
 Q.5 O que são funções de ordem superior (higher-order functions)?
 
     Funções de ordem superior são funções que podem aceitar outras funções como argumentos ou retornar funções como resultado. Elas são usadas extensivamente em JavaScript, por exemplo, em métodos de array como map, filter e reduce.
+    ----------
+    Higher-order functions are functions that can accept other functions as arguments or return functions as results. They are used extensively in JavaScript, for example in array methods like map, filter and reduce.
     EX: const highOrderFunction = (func1) => {
         return func1()
     }
@@ -58,6 +79,10 @@ Q.8 Explique o conceito de "hoisting" em JavaScript.
     Hoisting é como se o JavaScript pegasse todas as declarações de variáveis e funções e as "levantasse" para o topo do escopo atual (função ou script) antes de executar o código.
 
     EX: Imagine que você tem uma festa e precisa arrumar as cadeiras antes dos convidados chegarem. Mesmo que você decida onde colocar as cadeiras ao longo da festa, é como se alguém tivesse magicamente movido todas as cadeiras para os lugares certos antes da festa começar.
+    ----------
+    Hoisting is as like if JavaScript takes all variable and function declarations and "lifts" them to the top of the current scope (function or script) before executing the code.
+
+    EX: Imagine you have a party and you need to set up the chairs before the guests arrive. Even if you decide where to place the chairs throughout the party, it's as if someone magically moved all the chairs to the right spots before the party started.
 
     console.log(minhaVar); // undefined
     var minhaVar = 5;
@@ -94,6 +119,10 @@ Q.9 O que é this em JavaScript?
      this é uma palavra especial que refere-se ao contexto onde a função está sendo executada.
      Em resumo, this é como uma palavra mágica que aponta para o "dono" atual da função.
      Quando você usa this dentro de um método de um objeto, ele se refere ao próprio objeto. ex:
+     ----------
+     this is a special word that refers to the context where the function is being executed.
+     In short, this is like a magic word that points to the current "owner" of the function.
+     When you use this inside an object's method, it refers to the object itself. ex:
 
         const meuObjeto = {
             nome: 'João',
@@ -133,6 +162,8 @@ Q.9 O que é this em JavaScript?
 Q.10 Qual é a diferença entre == e === (Equality Operator vs Strict Equality Operator) ?
 
     == compara valores após fazer a coerção de tipos (conversão de tipos), enquanto === compara valores e tipos diretamente, sem fazer coerção. Portanto, === é mais rigoroso e recomendado para evitar comparações inesperadas.
+    ----------
+    == compares values ​​after type coercion (type conversion), while === compares values ​​and types directly, without coercion. Therefore, === is stricter and recommended to avoid unexpected comparisons.
 
 
 Q.11 O que é o Event Loop em JavaScript?
@@ -177,6 +208,8 @@ Q.11 O que é o Event Loop em JavaScript?
 Q.12 Explique o conceito de async e await em JavaScript.
 
     async é uma palavra-chave que marca uma função como assíncrona, permitindo o uso de await dentro dela. await pausa a execução da função assíncrona até que a promise seja resolvida ou rejeitada, tornando o código assíncrono mais fácil de ler e escrever.
+    ----------
+    async is a keyword that marks a function as asynchronous, allowing the use of await within it. await pauses asynchronous function execution until the promise is resolved or rejected, making asynchronous code easier to read and write.
 
 
 Q.13 Oque é IIFE?
@@ -192,16 +225,19 @@ Q.13 Oque é IIFE?
 Q.14 Diferença entre NULL e UNDEFINED?
 
     Undefined: Valor atribuido a uma variavel que foi declarada mas nao inicializada
+    Undefined: Value assigned to a variable that has been declared but not initialized
     Ex:
         let a;
         console.log(a) //OUTPUT: Undefined
 
     Null: Ele é declarado e inicializado com o valor null, é um dado do tipo objeto
+    Null: It is declared and initialized with the value null, it is object data
 
 
 Q.15 Oque é uma callBack function?
 
     Um callback é uma função que você passa para outra função como argumento, para que ela seja chamada (executada) depois que a primeira função termina seu trabalho.
+    A callback is a function that you pass to another function as an argument so that it is called (executed) after the first function has finished its work.
 
     Como Funciona?
         Passar a Função: Você cria uma função e a passa como argumento para outra função.
@@ -241,6 +277,12 @@ Q.16 Qual a diferença entre promise pra async await?
 
     Async/Await: É uma sintaxe mais simples e legível para trabalhar com promises. Você escreve código assíncrono como se fosse síncrono, usando async para declarar uma função assíncrona e await para esperar por uma promessa.
 
+    -----------
+
+    Promise: It is a way of dealing with asynchronous operations in JavaScript. You create a promise and use .then() and .catch() to work with the result or error.
+
+    Async/Await: It is a simpler and more readable syntax for working with promises. You write asynchronous code as if it were synchronous, using async to declare an asynchronous function and await to wait for a promise.
+
     Exemplo:
 
     function buscarDados() {
@@ -269,15 +311,23 @@ Q.17 Oque sao laços de repetiçao e para oque sao usados?
 
     Laços de repetição (ou loops) são usados para executar repetidamente um bloco de código enquanto uma condição for verdadeira. Eles são úteis para automatizar tarefas repetitivas. Eles são úteis para automatizar tarefas repetitivas.
 
+    -----------
+
+    Repeat loops (or loops) are used to repeatedly execute a block of code as long as a condition is true. They are useful for automating repetitive tasks. They are useful for automating repetitive tasks.
+
 
 Q.18 Como o metodo reduce funciona?
 
     O reduce é um método de array em JavaScript que reduz o array a um único valor, aplicando uma função acumuladora a cada item do array, de esquerda para direita.
+    --------
+    reduce is an array method in JavaScript that reduces the array to a single value by applying an accumulator function to each item in the array, from left to right.
 
 
 Q.19 Como o webpack funciona?
 
     O webpack é um empacotador de módulos JavaScript. Ele pega o código e suas dependências, e os empacota em um ou mais arquivos otimizados para o navegador.
+    --------
+    webpack is a JavaScript module wrapper. It takes the code and its dependencies, and packages them into one or more browser-optimized files.
 
 
 Q.20 O que é uma função pura?
@@ -295,8 +345,11 @@ Q.20 O que é uma função pura?
         contador++;
     }
 
+    A pure function is a function that, for the same arguments, always returns the same result and does not cause side effects (i.e., does not change anything outside the function)
+
 
 Q.21 O que é Babel?
 
     Babel é um transpilador de JavaScript que converte código moderno (ES6 e além) em uma versão compatível com navegadores mais antigos.
-
+    ----------
+    Babel is a JavaScript transpiler that converts modern code (ES6 and beyond) into a version compatible with older browsers.
